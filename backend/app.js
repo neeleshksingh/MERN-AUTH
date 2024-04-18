@@ -4,9 +4,11 @@ dotenv.config();
 const connection = require('./connections/connection');
 const User = require('./routes/user.route');
 connection();
+const cors = require('cors')
 const app = express();
 app.use(express.json());
 
+app.use(cors());
 app.use('/api/auth', User);
 
 app.get('/', (req, res) => {
