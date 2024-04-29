@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import axios from 'axios'
+import OAuth from '../components/OAuth';
 
 function SignUp() {
   const [formData, setFormData] = useState({});
@@ -42,9 +43,9 @@ function SignUp() {
               {loading ? 'Loading...' : 'Sign Up'}
             </button>
           </div>
+          <OAuth/>
         </form>
-        <div className='flex flex-col px-10 gap-2'>
-          <button className='bg-red-500 text-white rounded-lg p-3 hover:opacity-95 disabled:opacity-70'>Continue with Google</button>
+        <div className='flex flex-col px-10'>
           <p>Have an account? <span className='text-blue-500 hover:cursor-pointer' onClick={() => nav('/sign-in')}>Sign In</span></p>
         </div>
         <div className='mt-4 px-10'>

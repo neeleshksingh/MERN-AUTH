@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from 'axios'
 import { signInStart, signInSuccess, signInFaliure } from '../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import OAuth from '../components/OAuth';
 
 function SignIn() {
   const [formData, setFormData] = useState({});
@@ -45,9 +46,9 @@ function SignIn() {
               {loading ? 'Loading...' : 'Sign In'}
             </button>
           </div>
+          <OAuth/>
         </form>
-        <div className='flex flex-col px-10 gap-2'>
-          <button className='bg-red-500 text-white rounded-lg p-3 hover:opacity-95 disabled:opacity-70'>Continue with Google</button>
+        <div className='flex flex-col px-10'>
           <p>Don&#39;t have an account? <span className='text-blue-500 hover:cursor-pointer' onClick={() => nav('/sign-up')}>Sign Up</span></p>
         </div>
         <div className='mt-4 px-10'>
